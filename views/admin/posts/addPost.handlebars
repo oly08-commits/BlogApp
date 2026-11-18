@@ -1,0 +1,93 @@
+{{#each errors}}
+  <div class="alert alert-danger">{{text}}</div>
+{{/each}}
+
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-10 col-md-9 col-lg-7 col-xl-7">
+
+      <h2 class="text-center mb-3">Nova Postagem</h2>
+
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+
+          <form action="/admin/addPost" method="POST">
+
+            <div class="mb-3">
+              <label for="title" class="form-label">Título</label>
+              <input
+                type="text"
+                name="title"
+                id="title"
+                class="form-control"
+                placeholder="Digite o título da postagem"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="slug" class="form-label">Slug</label>
+              <input
+                type="text"
+                name="slug"
+                id="slug"
+                class="form-control"
+                placeholder="Digite o slug da postagem"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="description" class="form-label">Descrição</label>
+              <input
+                type="text"
+                name="description"
+                id="description"
+                class="form-control"
+                placeholder="Breve descrição da postagem"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="content" class="form-label">Conteúdo</label>
+              <textarea
+                name="content"
+                id="content"
+                class="form-control"
+                rows="6"
+                placeholder="Escreva o conteúdo da postagem..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="category" class="form-label">Categoria</label>
+              <select
+                name="category"
+                id="category"
+                class="form-select"
+                required
+              >
+                {{#each category}}
+                  <option value="{{_id}}">{{name}}</option>
+                {{else}}
+                  <option value="" disabled selected>
+                    Nenhuma categoria registada
+                  </option>
+                {{/each}}
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 mt-2">
+              Criar postagem
+            </button>
+
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

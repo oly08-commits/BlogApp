@@ -1,0 +1,58 @@
+<footer class="bg-dark text-light mt-5 pt-5 pb-3">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h5 class="fw-bold">BlogApp</h5>
+        <p class="text-secondary">
+          Plataforma de publicação e gestão de conteúdos, desenvolvida com
+          Node.js, Express e MongoDB.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <h5 class="fw-bold">Navegação</h5>
+        <ul class="list-unstyled">
+          <li><a
+              href="/"
+              class="text-secondary text-decoration-none"
+            >Início</a></li>
+          <li><a
+              href="/categories"
+              class="text-secondary text-decoration-none"
+            >Categorias</a></li>
+          {{#if user}}
+            <li><a
+                href="/user/logOut"
+                class="text-secondary text-decoration-none"
+              ><button class="btn btn-danger">Terminar sessão</button></a></li>
+          {{else}}
+            <li><a
+                href="/user/logIn"
+                class="text-secondary text-decoration-none"
+              ><button class="btn btn-success">Entrar</button></a></li>
+          {{/if}}
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5 class="fw-bold">Contacto</h5>
+        <p class="text-secondary">
+          Desenvolvido por Oli.
+        </p>
+        <a
+          href="https://wa.me/244921897287"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-success"
+        >
+          <i class="bi bi-whatsapp"></i>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+    <hr class="border-secondary" />
+    <div class="text-center text-secondary">
+      <small>
+        &copy; 2026 blogAPP. Todos os direitos reservados.
+      </small>
+    </div>
+  </div>
+</footer>

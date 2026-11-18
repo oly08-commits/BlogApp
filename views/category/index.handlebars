@@ -1,0 +1,14 @@
+<h1>Categorias Registradas</h1>
+<div class="mt-5"></div>
+{{#each category}}
+  <div class="card">
+    <div class="card-body mt-2">
+      <small><strong>Data de criação: </strong>{{date}}</small>
+      <a
+        href="/categoryElements/{{slug}}"
+        class="text-reset text-decoration-none"
+      ><h3 class="mt-2">{{name}}</h3></a>
+    </div>
+  </div>
+  <div class="mt-2"></div>
+{{/each}}

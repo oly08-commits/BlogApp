@@ -1,0 +1,85 @@
+{{#each errors}}
+  <div class="alert alert-danger">{{text}}</div>
+{{/each}}
+
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-10 col-md-8 col-lg-7 col-xl-6">
+
+      <h2 class="text-center mb-3">Editar Postagem</h2>
+
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+
+          <form action="/admin/editPost/{{post._id}}" method="POST">
+
+            <div class="mb-3">
+              <label for="title" class="form-label">Título</label>
+              <input
+                type="text"
+                name="title"
+                id="title"
+                class="form-control"
+                value="{{post.title}}"
+                placeholder="Digite o título"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="slug" class="form-label">Slug</label>
+              <input
+                type="text"
+                name="slug"
+                id="slug"
+                class="form-control"
+                value="{{post.slug}}"
+                placeholder="Digite o slug"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="description" class="form-label">Descrição</label>
+              <input
+                type="text"
+                name="description"
+                id="description"
+                class="form-control"
+                value="{{post.description}}"
+                placeholder="Digite uma descrição"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="content" class="form-label">Conteúdo</label>
+              <textarea
+                name="content"
+                id="content"
+                class="form-control"
+                rows="6"
+                placeholder="Escreva o conteúdo da postagem"
+              >{{post.content}}</textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="category" class="form-label">Categoria</label>
+              <select name="category" id="category" class="form-select">
+                {{#each category}}
+                  <option value="{{_id}}">{{name}}</option>
+                {{else}}
+                  <option value="" disabled>Nenhuma categoria registada</option>
+                {{/each}}
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 mt-2">
+              Guardar alterações
+            </button>
+
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

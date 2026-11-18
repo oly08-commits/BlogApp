@@ -1,29 +1,5 @@
-# Dependências do Node.js
+# Dependências
 node_modules/
 
 # Variáveis de ambiente
 .env
-.env.*
-!.env.example
-
-# Logs
-*.log
-logs/
-
-# Ficheiros temporários
-tmp/
-temp/
-
-# Ficheiros do sistema operativo
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# Configurações pessoais do VS Code
-.vscode/
-
-# Ficheiros de cobertura de testes
-coverage/
-
-# Ficheiros de cache
-.cache/
